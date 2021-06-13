@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row v-if="playlists !== null">
-      <div v-for="playlist in playlists">
+      <div v-for="playlist in playlists" v-bind:key="playlist.id">
         <div>
           <span class="subtitle-2" v-on:click="fetchPlaylist(playlist.id)">{{
               playlist.name

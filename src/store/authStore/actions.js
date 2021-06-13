@@ -1,7 +1,6 @@
 import dbUtils from '../dbUtils';
 import jwt_decode from 'jwt-decode';
 
-
 const actions = {
   async login(context, {username, password}) {
     try {
@@ -33,8 +32,7 @@ const actions = {
       });
 
       context.commit('SET_REFRESH_TOKEN_COOKIE', {refreshToken});
-      console.log('router');
-      console.log(router);
+
 
       // await router.push({name: 'uploadVideo'});
       // await router.push({name: 'uploadVideo'});

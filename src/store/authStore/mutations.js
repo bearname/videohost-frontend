@@ -49,10 +49,9 @@ const mutations = {
     Cookie.setCookie('refreshToken', refreshToken, 1100);
   },
   ERASE_COOKIE(state, {cookies}) {
-    for (const cookie in cookies) {
-      if (cookies.hasOwnProperty(cookie)) {
-        Cookie.eraseCookie(cookie);
-      }
+    const keys = Object.keys(cookies);
+    for (const key of keys){
+      Cookie.eraseCookie(cookies[key]);
     }
   },
 };
