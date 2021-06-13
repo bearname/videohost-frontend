@@ -14,12 +14,7 @@
       </router-link>
     </v-card-title>
     <v-card-text class="caption text-lg-left">
-      <span v-if="videoItem.status === 3">{{ videoItem.duration }}</span> s. {{ videoItem.uploaded }} {{
-        videoItem.views
-      }} views
-      <span v-if="showStatus"> {{
-          videoStatus
-        }}</span>
+
     </v-card-text>
     <div v-if="status !== null">
       <span v-if="status">Success </span>
@@ -34,20 +29,9 @@
 
 import {mapActions, mapGetters} from "vuex";
 import VideoStatus from "../store/videoStore/videoStatus";
-import {VBtn, VCard, VCardActions, VCardText, VCardTitle, VDialog, VImg, VToolbar} from "vuetify/lib";
 
 export default {
   name: "VideoItem",
-  components: {
-    VBtn,
-    VCard,
-    VCardTitle,
-    VCardText,
-    VToolbar,
-    VCardActions,
-    VImg,
-    VDialog,
-  },
   props: [
     'video',
     'showStatus',

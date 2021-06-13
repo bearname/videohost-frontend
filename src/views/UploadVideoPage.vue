@@ -93,13 +93,9 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import {VBtn} from "vuetify/lib";
 
 export default {
   name: "UploadVideoPage",
-  components: {
-    VBtn,
-  },
   data() {
     return {
       file: undefined,

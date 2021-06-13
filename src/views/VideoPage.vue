@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5">
+  <v-container>
     <v-row no-gutters>
       <v-col
           cols="12"
@@ -74,16 +74,14 @@ import VideoStatus from "../store/videoStore/videoStatus";
 import videosUtil from "../store/videoStore/videoUtil"
 import logError from "../util/logger";
 import RESPONSE_CODES from "../store/videoStore/responseCode";
-import {VBtn} from "vuetify/lib";
 import PlaylistAddPopup from "../components/PlaylistAddPopup";
-import {publishEvent} from "../events/event-bus";
+import {publishEvent} from "@/events/event-bus";
 
 export default {
   name: "StreamPage",
   components: {
     PlaylistAddPopup,
     Player,
-    VBtn,
     // Pagination,
   },
   data() {

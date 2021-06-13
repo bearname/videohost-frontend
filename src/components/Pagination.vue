@@ -4,8 +4,7 @@
       max-width="1000"
   >
     <div v-if="videos !== null">
-      <VideoList :videos="videos" :current-user-id="currentUserId" :show-status="showStatus" :user-page="userPage"
-                 :key="videos[0].id"/>
+
       <v-btn class="v-btn"
              :disabled="pageNumber === 0"
              @click="previousPage">
@@ -17,6 +16,8 @@
              @click="nextPage">
         Next
       </v-btn>
+      <VideoList :videos="videos" :current-user-id="currentUserId" :show-status="showStatus" :user-page="userPage"
+                 :key="videos[0].id"/>
     </div>
     <p v-else>Not found any video</p>
   </div>
@@ -25,13 +26,11 @@
 <script>
 import VideoList from "./VideoList";
 import {mapActions, mapGetters} from "vuex";
-import {VBtn} from 'vuetify/lib'
 
 export default {
   name: "Pagination",
   components: {
     VideoList,
-    VBtn
   },
   props: [
     'showStatus',

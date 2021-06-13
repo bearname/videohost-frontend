@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import {VBtn} from "vuetify/lib";
 import {mapActions, mapGetters} from "vuex";
 
 export default {

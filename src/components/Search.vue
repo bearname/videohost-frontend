@@ -19,13 +19,11 @@
 <script>
 import VideoList from "./VideoList";
 import {mapActions, mapGetters} from "vuex";
-import {VBtn} from 'vuetify/lib';
 
 export default {
   name: "Search",
   components: {
     VideoList,
-    VBtn
   },
   props: [
     'searchQuery'

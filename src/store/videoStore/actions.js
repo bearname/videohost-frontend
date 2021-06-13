@@ -7,7 +7,6 @@ import VideoStatus from './videoStatus';
 const actions = {
   async getVideoById(context, {videoId}) {
     try {
-
       const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/' + videoId;
       const response = await axios.get(url);
       console.log(response);

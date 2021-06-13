@@ -28,12 +28,10 @@
 
 <script>
 import {mapActions} from "vuex";
-import {VBtn} from "vuetify/lib";
 
 export default {
   name: "LoginPage",
   components: {
-    VBtn,
   },
   data() {
     return {
