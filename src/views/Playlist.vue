@@ -23,9 +23,9 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import VideoList from "@/components/VideoList";
-import {playlistModification} from "@/store/playlistStore/actions";
-import {publishEvent} from "@/events/event-bus";
+import VideoList from "../components/VideoList";
+import {playlistModification} from "../store/playlistStore/actions";
+import {publishEvent} from "../events/event-bus";
 
 export default {
   name: "Playlist",

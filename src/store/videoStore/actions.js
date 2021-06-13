@@ -9,10 +9,7 @@ const actions = {
     try {
 
       const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/' + videoId;
-      console.log(url);
       const response = await axios.get(url);
-      console.log('        await this.findVideoById({videoId: videoId});\n')
-      console.log(`responseresponseresponseresponseresponse`);
       console.log(response);
       if (response.status !== 200) {
         console.log('failed get video by id');

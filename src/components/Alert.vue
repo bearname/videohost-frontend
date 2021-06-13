@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {EventBus} from "@/events/event-bus";
+import {EventBus} from "../events/event-bus";
 
 export default {
   name: "Alert"

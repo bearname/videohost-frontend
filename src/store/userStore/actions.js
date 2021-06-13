@@ -1,6 +1,6 @@
-import makeRequest, {requestWithAuth} from '@/api/api';
-import videosUtil from '@/store/videoStore/videoUtil';
-import Cookie from '@/util/cookie';
+import makeRequest, {requestWithAuth} from '../../api/api';
+import videosUtil from '../../store/videoStore/videoUtil';
+import Cookie from '../../util/cookie';
 
 const actions = {
   async addUser(context, {username}) {

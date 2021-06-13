@@ -3,8 +3,8 @@ import {createVuetify} from './plugins/vuetify';
 import App from './App';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import {createStore} from './store';
-import {registerPlugins} from "@/plugins";
-import routerModule from "@/router";
+import {registerPlugins} from "./plugins";
+import routerModule from "./router";
 import { sync } from 'vuex-router-sync'
 
 Vue.config.productionTip = false;

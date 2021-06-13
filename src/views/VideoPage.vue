@@ -73,10 +73,10 @@ import Cookie from "../util/cookie";
 import VideoStatus from "../store/videoStore/videoStatus";
 import videosUtil from "../store/videoStore/videoUtil"
 import logError from "../util/logger";
-import RESPONSE_CODES from "@/store/videoStore/responseCode";
+import RESPONSE_CODES from "../store/videoStore/responseCode";
 import {VBtn} from "vuetify/lib";
-import PlaylistAddPopup from "@/components/PlaylistAddPopup";
-import {publishEvent} from "@/events/event-bus";
+import PlaylistAddPopup from "../components/PlaylistAddPopup";
+import {publishEvent} from "../events/event-bus";
 
 export default {
   name: "StreamPage",

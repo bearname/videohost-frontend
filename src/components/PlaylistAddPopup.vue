@@ -30,9 +30,9 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import {toggleHideElement, unHideElement} from "@/util/dom";
-import {publishEvent} from "@/events/event-bus";
-import {playlistModification} from "@/store/playlistStore/actions";
+import {toggleHideElement, unHideElement} from "../util/dom";
+import {publishEvent} from "../events/event-bus";
+import {playlistModification} from "../store/playlistStore/actions";
 
 export default {
   name: "PlaylistAddPopup",

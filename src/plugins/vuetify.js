@@ -1,5 +1,5 @@
 import Vuetify from 'vuetify/lib';
-import {IS_SERVER} from "@/util/globals";
+// import {IS_SERVER} from "@/util/globals";
 import '@mdi/font/css/materialdesignicons.css'
 
 export function createVuetify() {

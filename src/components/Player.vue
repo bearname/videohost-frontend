@@ -117,7 +117,7 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import {addCss, hideElement, removeCss, toggleHideElement, unHideElement} from "@/util/dom";
+import {addCss, hideElement, removeCss, toggleHideElement, unHideElement} from "../util/dom";
 
 let Hls = require('hls.js');
 

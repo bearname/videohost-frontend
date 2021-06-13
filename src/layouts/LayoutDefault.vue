@@ -11,7 +11,7 @@
 import Navigation from '../components/Navigation.vue'
 import Search from '../components/Search.vue'
 import {VIcon} from "vuetify/lib";
-import Alert from "@/components/Alert";
+import Alert from "../components/Alert";
 
 export default {
   name: "LayoutDefault",

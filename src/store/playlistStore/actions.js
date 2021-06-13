@@ -1,5 +1,5 @@
-import makeRequest, {requestWithAuth} from '@/api/api';
-import Cookie from "@/util/cookie";
+import makeRequest, {requestWithAuth} from '../../api/api';
+import Cookie from "../../util/cookie";
 
 export const playlistModification = {
   AddVideo: 0,

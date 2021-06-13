@@ -1,6 +1,6 @@
-import {useVuetify} from "@/plugins/vuetify";
-import {useVuex} from "@/store";
-import {useVueRouter} from "@/router";
+import {useVuetify} from "./vuetify";
+import {useVuex} from "../store";
+import {useVueRouter} from "../router";
 
 export function registerPlugins(app) {
   useVuex(app);

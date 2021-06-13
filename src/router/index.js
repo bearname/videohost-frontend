@@ -33,9 +33,6 @@ function routes(store) {
       component: UploadVideo,
       beforeEnter: (to, from, next) => {
         const getter = store.getters['authMod/isLoggedIn'];
-        console.log("authmod isloggedin");
-        console.log(getter);
-
         if (getter) {
           next();
         } else {
@@ -104,7 +101,6 @@ let routerModule = (function () {
         routes(store).login,
         routes(store).search,
         routes(store).playlist,
-        // routes.editVideo,
       ],
     });
   }
@@ -117,29 +113,4 @@ let routerModule = (function () {
 })();
 
 export default routerModule;
-// let router
-//
-// export function createRouter(vuetify, store) {
-//   if (router == null && router === undefined) {
-//     router = new VueRouter({
-//       mode: 'history',
-//       routes: [
-//         routes(store).home,
-//         routes(store).user,
-//         routes(store).videoStream,
-//         routes(store).uploadVideo,
-//         routes(store).login,
-//         routes(store).search,
-//         routes(store).playlist,
-//         // routes.editVideo,
-//       ],
-//     });
-//   }
-//   console.log(router);
-//   return router;
-// }
-//
-// console.log(router);
-//
-// export default router;
 
