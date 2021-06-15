@@ -443,7 +443,7 @@ export default {
       if (Hls.isSupported()) {
         this.prepareHls(this.id, this.selectedQuality);
       } else if (this.videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-        this.videoElement.src = process.env.VUE_APP_VIDEO_API + '/media/' + this.id + '/stream/';
+        this.videoElement.src = process.env.VUE_APP_VIDEO_STREAMING_API + '/media/' + this.id + '/stream/';
         this.video.play();
         this.videoElement.addEventListener('loadedmetadata', function () {
         });
@@ -464,7 +464,7 @@ export default {
       // };
 
       this.hls = new Hls();
-      this.hls.loadSource(process.env.VUE_APP_VIDEO_API + '/media/' + id + '/stream/');
+      this.hls.loadSource(process.env.VUE_APP_VIDEO_STREAMING_API + '/media/' + id + '/stream/');
       this.hls.attachMedia(this.videoElement);
       this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
         this.playVideo();

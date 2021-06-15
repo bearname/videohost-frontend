@@ -35,7 +35,6 @@ const mutations = {
   SET_REFRESH_TOKEN(state, {refreshToken}) {
     console.log('SET_REFRESH_TOKEN');
     state.user.refreshToken = refreshToken;
-
   },
   SET_COOKIE(state, {username, accessToken}) {
     if (accessToken !== '') {
