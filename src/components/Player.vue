@@ -250,7 +250,7 @@ export default {
     async preloadPreviewImages() {
       const thumbnails = [];
       for (let i = 0; i < this.duration / (TILE_SIZE.x * TILE_SIZE.y); i++) {
-        thumbnails.push(process.env.VUE_APP_VIDEO_API + '/content/' + this.videoId + "/output-" + i + ".png");
+        thumbnails.push(process.env.VUE_APP_VIDEO_STREAMING_API + '/content/' + this.videoId + "/output-" + i + ".png");
       }
       if (!this.previewImages) {
         this.previewImages = [];

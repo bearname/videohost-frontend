@@ -7,7 +7,7 @@ import VideoStatus from './videoStatus';
 const actions = {
   async getVideoById(context, {videoId}) {
     try {
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/' + videoId;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos/' + videoId;
       const response = await axios.get(url);
       console.log(response);
       if (response.status !== 200) {
@@ -39,7 +39,7 @@ const actions = {
         },
       };
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/';
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos/';
       console.log('upload video' + url);
 
       const response = await axios.post(url, formData, config);
@@ -61,7 +61,7 @@ const actions = {
   },
   async getVideoOnPage(context, page = '1', countVideoOnPage = '10') {
     try {
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/?page=' + page +
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos/?page=' + page +
         '&countVideoOnPage=' + countVideoOnPage;
       console.log(url);
       const response = await axios.get(url);
@@ -81,7 +81,7 @@ const actions = {
   async updateTitleAndDescription(context, {videoId, name, description}) {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/' + videoId;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos/' + videoId;
       const config = {
         method: 'PUT',
         headers: {
@@ -105,7 +105,7 @@ const actions = {
   async deleteVideoPermanent(context, {videoId}) {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos/' + videoId;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos/' + videoId;
       const config = {
         method: 'DELETE',
         headers: {
@@ -128,7 +128,7 @@ const actions = {
   async likeVideo(context, {videoId, isLike}) {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
-      const videoServerAddress = process.env.VUE_APP_VIDEO_API;
+      const videoServerAddress = process.env.VUE_APP_BACKEND_API;
       const url = videoServerAddress + `/api/v1/videos/${videoId}/like/${isLike ? 1 : 0}`;
       const config = {
         headers: {
@@ -152,7 +152,7 @@ const actions = {
   },
   async searchVideos(context, {searchString, page = '1', countVideoOnPage = '10'}) {
     try {
-      const videoServerAddress = process.env.VUE_APP_VIDEO_API;
+      const videoServerAddress = process.env.VUE_APP_BACKEND_API;
       const url = videoServerAddress + '/api/v1/videos/search?page=' + page + '&limit=' + countVideoOnPage + '&search=' + searchString;
       const response = await axios.get(url);
 

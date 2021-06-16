@@ -12,7 +12,7 @@ const actions = {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/playlists';
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/playlists';
       console.log(url);
 
       const json = {
@@ -39,7 +39,7 @@ const actions = {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/playlists/' + playlistId + '/modify';
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/playlists/' + playlistId + '/modify';
       console.log(url);
 
       const json = {
@@ -66,7 +66,7 @@ const actions = {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
       const userId = Cookie.getCookie("userId");
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/playlists?ownerId=' + userId;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/playlists?ownerId=' + userId;
       console.log(url);
 
       const config = {
@@ -85,7 +85,7 @@ const actions = {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/playlists/' + playlistId;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/playlists/' + playlistId;
       console.log(url);
 
       const config = {
@@ -99,7 +99,7 @@ const actions = {
       const playlist = data;
       playlist.videos = JSON.parse(data.videos.replace(/\\/g, ''));
       playlist.videos.forEach(item => {
-        item.thumbnail = process.env.VUE_APP_VIDEO_API + '/content/' + item.id + '/screen.jpg';
+        item.thumbnail = process.env.VUE_APP_BACKEND_API + '/content/' + item.id + '/screen.jpg';
       })
       console.log(playlist);
       context.state.playlist = playlist;

@@ -6,7 +6,7 @@ const actions = {
   async addUser(context, {username}) {
     try {
       const response = await fetch(
-        process.env.VUE_APP_VIDEO_API + '/api/v1/users/' + username,
+        process.env.VUE_APP_BACKEND_API + '/api/v1/users/' + username,
         {
           headers: {
             Authorization: context.rootGetters['authMod/getTokenHeader'],
@@ -43,7 +43,7 @@ const actions = {
         }),
       };
 
-      const response = await fetch(process.env.VUE_APP_VIDEO_API + '/api/v1/users/' + username, config);
+      const response = await fetch(process.env.VUE_APP_BACKEND_API + '/api/v1/users/' + username, config);
       if (!response.ok) {
         if (response.status !== 401) {
           console.log(response);
@@ -64,7 +64,7 @@ const actions = {
   async getUserVideos(context, {page, countVideoOnPage}) {
     try {
       const cookie = Cookie.getCookie('userId');
-      const url = process.env.VUE_APP_USER_API + '/api/v1/users/' + cookie + '/videos?page=' + page +
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/users/' + cookie + '/videos?page=' + page +
         '&countVideoOnPage=' + countVideoOnPage;
       console.log(url);
 
@@ -88,7 +88,7 @@ const actions = {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
 
-      const url = process.env.VUE_APP_VIDEO_API + '/api/v1/videos-liked?page=' + page + '&countVideoOnPage=' + countVideoOnPage;
+      const url = process.env.VUE_APP_BACKEND_API + '/api/v1/videos-liked?page=' + page + '&countVideoOnPage=' + countVideoOnPage;
       console.log(url);
 
       const config = {
@@ -114,7 +114,7 @@ const actions = {
     try {
       await context.dispatch('authMod/updateAuthorizationIfNeeded', {}, {root: true});
 
-      const url = process.env.VUE_APP_USER_API + `/api/v1/users/${Cookie.getCookie("userId")}/follow?followingToId=${followingToUserId}`;
+      const url = process.env.VUE_APP_BACKEND_API + `/api/v1/users/${Cookie.getCookie("userId")}/follow?followingToId=${followingToUserId}`;
       console.log(url);
 
       const data = await requestWithAuth(context, "POST", url, null);

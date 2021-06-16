@@ -7,7 +7,7 @@ const actions = {
       context.commit('setUsername');
 
       console.log(context.getters.username);
-      const response = await fetch(process.env.VUE_APP_USER_API + '/api/v1/auth/login', {
+      const response = await fetch(process.env.VUE_APP_BACKEND_API + '/api/v1/auth/login', {
         method: 'POST',
         body: JSON.stringify({username: username, password: password}),
       });
@@ -70,7 +70,7 @@ const actions = {
         }),
       };
 
-      const response = await fetch(process.env.VUE_APP_USER_API + '/api/v1/auth/create-user', config);
+      const response = await fetch(process.env.VUE_APP_BACKEND_API + '/api/v1/auth/create-user', config);
       if (!response.ok) {
         console.log('Cannot signup!');
         console.log(response);
@@ -116,7 +116,7 @@ const actions = {
           },
         };
 
-        const response = await fetch(process.env.VUE_APP_USER_API + '/api/v1/auth/token', config);
+        const response = await fetch(process.env.VUE_APP_BACKEND_API + '/api/v1/auth/token', config);
         if (!response.ok) {
           console.log('Cannot get token!');
           console.log(response);
